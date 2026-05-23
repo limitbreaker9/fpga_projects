@@ -1,0 +1,28 @@
+/ {
+	amba_pl: amba_pl {
+		ranges;
+		compatible = "simple-bus";
+		#address-cells = <1>;
+		#size-cells = <1>;
+		firmware-name = "oled_block_design_ip_wrapper.bit.bin";
+		clocking0: clocking0 {
+			compatible = "xlnx,fclk";
+			assigned-clocks = <&clkc 15>;
+			assigned-clock-rates = <100000000>;
+			#clock-cells = <0>;
+			clock-output-names = "fabric_clk";
+			clocks = <&clkc 15>;
+		};
+		PmodOLED_0: PmodOLED@40000000 {
+			compatible = "xlnx,PmodOLED-1.0";
+			status = "okay";
+			clock-names = "s_axi_aclk";
+			xlnx,ip-name = "PmodOLED";
+			xlnx,pmod = "Custom";
+			xlnx,edk-iptype = "PERIPHERAL";
+			reg = <0x40000000 0x1000 0x40010000 0x10000>;
+			clocks = <&clkc 15>;
+			xlnx,name = "PmodOLED_0";
+		};
+	};
+};
