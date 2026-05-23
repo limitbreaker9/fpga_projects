@@ -1,6 +1,6 @@
 # ZedBoard — Zynq-7000 Evaluation and Development Board
 
-![ZedBoard](zed_board.jpg)
+![ZedBoard](zed_board.png)
 
 The **ZedBoard** is an evaluation and development board built around the **Xilinx Zynq-7000 XC7Z020 SoC (System on Chip)**. It was designed by Digilent and distributed by Avnet, and it remains one of the most popular FPGA learning platforms in universities and research labs worldwide.
 
