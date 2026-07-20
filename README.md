@@ -199,7 +199,7 @@ Both projects drive the same SSD1306 OLED display and accept typed text from a U
 
 ## Reference Documents
 
-- ZedBoard Hardware User's Guide v1.1 (included: `zedboard_ug.pdf`)
+- ZedBoard Hardware User's Guide v1.1 — see the [Digilent ZedBoard Resource Center](https://digilent.com/reference/programmable-logic/zedboard/start)
 - Xilinx Zynq-7000 Technical Reference Manual (UG585)
 - Digilent ZedBoard Resource Center: https://digilent.com/reference/programmable-logic/zedboard/start
 
