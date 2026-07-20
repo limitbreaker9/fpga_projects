@@ -73,7 +73,11 @@ zenboarrd_oled_throughipblock/
 ├── block diagram.png                   # Vivado block design screenshot
 ├── fpga_oled_display.jpeg              # Photo of working OLED output
 ├── serial_monitor.jpeg                 # Photo of serial monitor output
-├── vivado-library-master/              # Digilent IP cores (PmodOLED IP lives here)
+├── vivado-library-master/
+│   └── vivado-library-master/
+│       ├── if/pmod_v1_0/               # Pmod interface definition (required by the PmodOLED IP)
+│       ├── ip/Pmods/PmodOLED_v1_0/     # The only Pmod IP core this project actually uses
+│       └── module/synchronizers/       # Shared CDC/synchronizer primitives used by the IP
 ├── zenboarrd_oled_throughipblock.srcs/ # Vivado source files and block design
 ├── app_component/
 │   └── src/
@@ -87,8 +91,13 @@ zenboarrd_oled_throughipblock/
 │       ├── xspi.c / xspi.h             # Xilinx SPI driver
 │       ├── lscript.ld                  # Linker script (mapped to OCM/RAM)
 │       └── CMakeLists.txt              # CMake build configuration
-└── platform/                           # Vitis platform component
+└── platform/                           # Vitis platform component (System Device Tree flow)
+    ├── hw/sdt/                         # Committed hardware description: device tree sources,
+    │                                   # ps7_init.tcl/.c, and the PmodOLED_v1_0 driver copy
+    └── zynq_fsbl/                      # First-Stage Boot Loader sources
 ```
+
+> **Note:** `build/` and `export/` output folders (compiled BSP, object files, FSBL binaries) are gitignored and are regenerated automatically the moment you build the `platform` and `app_component` targets in Vitis — they are intentionally not tracked in this repo. Likewise, `vivado-library-master` only ships the Pmod interface definition, the synchronizer primitives, and the `PmodOLED_v1_0` IP core itself; the dozens of unrelated Digilent Pmod/Zmod/Mod IP cores that ship with the upstream `vivado-library` repo have been removed since this project doesn't use them.
 
 ---
 
@@ -203,4 +212,3 @@ extern const uint8_t rgbFillPat[];
 See also: [`zenboard_oled`](../zenboard_oled) — the same OLED display driven using pure PS software bit-banging without any PL IP block, useful for direct comparison of the two approaches.
 
 ---
-
