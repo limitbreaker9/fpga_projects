@@ -1,0 +1,13 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "gen_directory": "../../../../zedboard_oled_custom_ip.gen/sources_1/bd/oled_block_design_with_myoledip",
+      "name": "oled_block_design_with_myoledip",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2025.2"
+    },
+    "design_tree": {}
+  }
+}
