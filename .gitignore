@@ -1,0 +1,26 @@
+
+
+# Xilinx-generated Board Support Package / drivers / FSBL
+**/ps7_cortexa9_0/
+**/standalone_ps7_cortexa9_0/
+**/zynq_fsbl/
+
+# Vivado/Vitis hardware export + synthesis/implementation reports
+**/hw/sdt/
+
+# Build artifacts (binaries, bitstreams, hardware handoff, checkpoints)
+*.bit
+*.xsa
+*.elf
+*.dcp
+*.a
+*.obj
+
+# Logs and build-system cache
+*.log
+*.ninja
+CMakeCache.txt
+*.cmake
+compile_commands.json
+**/CMakeFiles/
+**/.cache/
